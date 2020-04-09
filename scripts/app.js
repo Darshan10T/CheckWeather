@@ -21,7 +21,13 @@ const updateUI = (data) => {
       <span class="units">&deg;C</span>
     </div>
   `;
-
+  
+  document.getElementsByClassName('share-bar')[0].innerHTML = "";
+  
+  document.getElementsByClassName('share-bar')[0].setAttribute('data-title','Its '+weather.WeatherText+' in '+cityDets.EnglishName+' and the temperature is '+weather.Temperature.Metric.Value+'°C');
+    
+  new ShareBar({'facebookAppId': 586264738912911});
+  
   // update the night/day & icon images
   const iconsrc = `img/icons/${weather.WeatherIcon}.svg`;
   icon.setAttribute("src", iconsrc);

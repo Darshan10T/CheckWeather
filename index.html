@@ -8,8 +8,7 @@
     <title>Check Weather</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="./style.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-	<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="./share.bar.css">
 </head>
 
 <body>
@@ -37,49 +36,18 @@
                 </div>
             </div>
         </div>
-		<div class="container">
-		  <div class="social">
-			<a href="#" id="share-fb" class="sharer button"><i class="fa fa-3x fa-facebook-square"></i></a>
-			<a href="#" id="share-tw" class="sharer button"><i class="fa fa-3x fa-twitter-square"></i></a>
-			<a href="#" id="share-li" class="sharer button"><i class="fa fa-3x fa-linkedin-square"></i></a>
-		  </div>
+		<div class="share-bar" 
+		 data-url="https://www.accuweather.com/" 
+		 data-title="Its Sunny in Dallas and the temperature is 35°C"  
+		 data-hashtags="#weather #checkWeather">
 		</div>
+		
     </div>
+	<script src="./scripts/share.bar.js"></script>
     <script src="./scripts/forecast.js"></script>
     <script src="./scripts/app.js"></script>
-    <script src="https://cdn.jsdelivr.net/sharer.js/latest/sharer.min.js"></script>
-	<script>
-		document.addEventListener("DOMContentLoaded", function (event) {
-		
-			setTimeout(function(){ 
-				var title = "It's " + $('.weather')[0].innerHTML + " in " + $('.city')[0].innerHTML + " and the temperature is " + $('.temperature')[0].innerHTML + $('.units')[0].innerHTML;
-				  var url = "https://www.accuweather.com/";
-				  //var title = document.title;
-				  var subject = document.title;
-				  var via = "yourTwitterUsername";
-				  //console.log( url );
-				  //console.log( title );
-			  
-				  //facebook
-				  $("#share-fb").attr("data-url", url).attr("data-sharer", "facebook");
-				  //twitter
-				  $("#share-tw")
-					.attr("data-url", url)
-					.attr("data-title", title)
-					.attr("data-via", via)
-					.attr("data-sharer", "twitter");
-				  //linkedin
-				  $("#share-li").attr("data-url", url).attr("data-sharer", "linkedin");
-				  
-
-				  //Prevent basic click behavior
-				  $(".sharer button").click(function () {
-					event.preventDefault();
-				  });
-			}, 3000);
-		  
-		});
-
+	<script>	
+		setTimeout(function(){ new ShareBar({'facebookAppId': 586264738912911}); }, 1500);
 	</script>
 </body>
 
