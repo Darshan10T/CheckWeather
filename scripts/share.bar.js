@@ -129,7 +129,7 @@ function ShareBar(options) {
                     classPopup: 'share-popup',
                     facebookAppId: '',
                     networks: [
-                        FACEBOOK, TWITTER, LINKEDIN
+                        TWITTER, LINKEDIN
                     ],
                     theme: 'natural',
                     buttonWidth: BUTTON_WIDTH,
